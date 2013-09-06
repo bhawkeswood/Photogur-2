@@ -3,7 +3,7 @@ body {
 	color: white;
 	font-family: tahoma;
 	font-variant: small-caps;
-	width: auto;
+	width: 1200px;
 	max-height: 1000px
 
 }
@@ -50,3 +50,7 @@ a:hover {
 	max-width: 150px;
 	max-height: 100px;
 	}
+
+.comments {
+	border: 1px white solid;
+}

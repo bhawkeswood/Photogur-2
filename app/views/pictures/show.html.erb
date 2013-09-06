@@ -2,3 +2,31 @@
 
 <p class="title_artist"><%= @picture[:title] %> by <%= @picture[:artist] %></p>
 <%= image_tag @picture.url %>
+
+<h2>Comments</h2>
+<% @picture.comments.each do |comment| %>
+<div class="comments">  <p>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+  </p>
+ 
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p> </div>
+<% end %>
+
+<h2>Add a comment:</h2>
+<%= form_for([@picture, @picture.comments.build]) do |f| %>
+  <p>
+    <%= f.label :commenter %><br />
+    <%= f.text_field :commenter %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
