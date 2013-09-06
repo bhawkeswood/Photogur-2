@@ -1,7 +1,9 @@
-<h1>Pictures (<%= @pictures.length %>)</h1>
-<%= link_to "New Picture", "/pictures/new" %>
+<h1>Welcome to Photogur!</h1>  
+	<p>We Currently Have <%= @pictures.length %> Photos Available for Viewing.  Would you care to add a <%= link_to "New Picture?", "/pictures/new" %>
+</p>
+<!-- <%= link_to "New Picture", "/pictures/new" %> -->
 
 <% @pictures.each do |picture| %>
-	<p><% picture[:title] %> by <%= picture[:artist] %></p>
-	<%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %>
-<% end %>
+	<!-- <p class="title_artist"><%= picture[:title] %> by <%= picture[:artist] %></p> -->
+	<p class="crop"><%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %>
+<% end %> 
