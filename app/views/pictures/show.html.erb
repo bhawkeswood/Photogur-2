@@ -1,8 +1,10 @@
-<%= link_to "Back to Pictures", pictures_url %> | <%= link_to "Edit", edit_picture_path(@picture) %> | <%= link_to "Delete", @picture, :confirm => "Are you sure you want to delete this picture?", :method => :delete %>
-
+<p id="links"><%= link_to "Back to Pictures", pictures_url %> | <%= link_to "Edit", edit_picture_path(@picture) %> | <%= link_to "Delete", @picture, :confirm => "Are you sure you want to delete this picture?", :method => :delete %></p>
+<br>
+<br>
+<br>
 <p class="title_artist"><%= @picture[:title] %> by <%= @picture[:artist] %></p>
-<%= image_tag @picture.url %>
-
+<div id="pix"><%= image_tag @picture.url %></div>
+<div id="all_comments">
 <h2>Comments</h2>
 <% @picture.comments.each do |comment| %>
 <div class="comments">  <p>
@@ -30,3 +32,4 @@
     <%= f.submit %>
   </p>
 <% end %>
+</div>
