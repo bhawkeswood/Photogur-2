@@ -4,6 +4,7 @@
 <br>
 <p class="title_artist"><%= @picture[:title] %> by <%= @picture[:artist] %></p>
 <div id="pix"><%= image_tag @picture.url %></div>
+ 
 <div id="all_comments">
 <h2>Comments</h2>
 <% @picture.comments.each do |comment| %>
